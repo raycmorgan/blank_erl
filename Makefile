@@ -11,7 +11,7 @@ run:
 
 test: all
 	$(ERL) -noshell $(EPATH) \
-		-s _test_suite test \
+		-s app_name_test_suite test \
 		-s init stop
 	
 clean:
