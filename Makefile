@@ -5,10 +5,6 @@ EPATH=-pa ebin
 all:
 	@mkdir -p ebin
 	$(ERL) $(EPATH) -make 
-	
-all_notest:
-	@mkdir -p ebin
-	$(ERL) $(EPATH) -make -DNOTEST
 
 run:
 	$(ERL) $(EPATH)
