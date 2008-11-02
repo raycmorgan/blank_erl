@@ -11,4 +11,4 @@
     make        # compiles all .erl files located in src/
     make run    # starts the Erlang shell with ebin in the path
     make clean  # removes all .beam files from ebin/
-    make test   # compiles all and runs the test suite (calls: app_name_test_suite:test())
+    make test   # compiles all with TEST then runs the test suite (calls: app_name_test_suite:test())
