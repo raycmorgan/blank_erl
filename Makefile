@@ -1,15 +1,20 @@
 ERL=erl
-ERLC=erlc
+ERLC=erlc -I include -v -o ebin
+SOURCES=src/*
 EPATH=-pa ebin
 
 all:
 	@mkdir -p ebin
-	$(ERL) $(EPATH) -make 
+	$(ERLC) $(SOURCES)
+
+all_test:
+	@mkdir -p ebin
+	$(ERLC) -DTEST $(SOURCES)
 
 run:
 	$(ERL) $(EPATH)
 
-test: all
+test: all_test
 	$(ERL) -noshell $(EPATH) \
 		-s app_name_test_suite test \
 		-s init stop
